@@ -60,6 +60,37 @@ html, body.soon-body{
   align-items: center;
 }
 
+/*
+  El texto queda oculto (sin animar) hasta que Anton/Playfair/Inter
+  terminen de cargar (ver js/coming-soon.js → clase "fonts-ready" en
+  <html>). Si el texto aparece y se anima ANTES de que la fuente esté
+  lista, el navegador reemplaza la fuente de reserva por la definitiva
+  a mitad de animación, el ancho cambia de golpe y las palabras
+  "saltan" — eso era el bug de alineación/parpadeo.
+*/
+.soon-content, .soon-marquee, .soon-footer{
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+html.fonts-ready .soon-content,
+html.fonts-ready .soon-marquee,
+html.fonts-ready .soon-footer{
+  opacity: 1;
+}
+/* Red de seguridad si JS no corriera: no-js nunca tendrá fonts-ready,
+   así que mostramos el contenido igual (sin esperar fuentes). */
+html.no-js .soon-content,
+html.no-js .soon-marquee,
+html.no-js .soon-footer{
+  opacity: 1;
+}
+.soon-marquee-track{
+  animation-play-state: paused;
+}
+html.fonts-ready .soon-marquee-track{
+  animation-play-state: running;
+}
+
 .soon-kicker{
   font-family: var(--f-sans);
   font-size: 12px;
@@ -83,13 +114,13 @@ html, body.soon-body{
 .soon-drip{
   position: absolute;
   left: 50%;
-  bottom: -6px;
+  bottom: -4px;
   width: 6px;
   height: 6px;
   border-radius: 50% 50% 50% 0;
-  transform: translateX(-50%) rotate(45deg);
   background: var(--green-light);
   opacity: 0;
+  will-change: transform, opacity;
   animation: soonDrip 3.2s ease-in infinite;
 }
 
@@ -164,6 +195,7 @@ html, body.soon-body{
 .soon-marquee-track{
   display: flex;
   width: max-content;
+  will-change: transform;
   animation: soonMarquee 22s linear infinite;
 }
 .soon-marquee-track span{
@@ -198,11 +230,11 @@ html, body.soon-body{
   50%{ transform: scale(1.05); }
 }
 @keyframes soonDrip{
-  0%{ opacity: 0; bottom: -4px; }
+  0%{ opacity: 0; transform: translateX(-50%) translateY(0) rotate(45deg); }
   15%{ opacity: 1; }
-  70%{ opacity: 0.6; bottom: -34px; }
-  71%{ opacity: 0; bottom: -4px; }
-  100%{ opacity: 0; bottom: -4px; }
+  70%{ opacity: 0.6; transform: translateX(-50%) translateY(30px) rotate(45deg); }
+  71%{ opacity: 0; transform: translateX(-50%) translateY(0) rotate(45deg); }
+  100%{ opacity: 0; transform: translateX(-50%) translateY(0) rotate(45deg); }
 }
 @keyframes soonMarquee{
   from{ transform: translateX(0); }
