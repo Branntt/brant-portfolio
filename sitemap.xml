@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tudominio.com/index.html</loc><priority>1.0</priority></url>
+<!--
+  Modo "Coming Soon": solo la portada de espera está lista para
+  indexarse. Cuando se haga el lanzamiento real, restaura estas líneas
+  (y quita noindex de cada página — ver README.md).
+
+  <url><loc>https://tudominio.com/home.html</loc><priority>1.0</priority></url>
   <url><loc>https://tudominio.com/sobre-mi.html</loc><priority>0.8</priority></url>
   <url><loc>https://tudominio.com/proyectos.html</loc><priority>0.9</priority></url>
   <url><loc>https://tudominio.com/fotografia.html</loc><priority>0.7</priority></url>
   <url><loc>https://tudominio.com/contacto.html</loc><priority>0.6</priority></url>
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tudominio.com/index.html</loc><priority>1.0</priority></url>
 </urlset>

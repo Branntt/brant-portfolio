@@ -3,6 +3,31 @@
 Sitio estático (HTML/CSS/JS puro, sin frameworks ni build step) para el portafolio
 de Brant, director creativo y realizador audiovisual.
 
+## Modo actual: "Coming Soon"
+
+El sitio **aún no se lanzó oficialmente**. `index.html` (la URL pública) es una
+pantalla de espera independiente (`css/coming-soon.css`) con el logo, el nombre
+y una animación — no tiene navegación ni enlaza al resto del portafolio.
+
+El portafolio completo real sigue existiendo y funcionando igual que antes,
+solo que renombrado a **`home.html`** (y las demás páginas `sobre-mi.html`,
+`proyectos.html`, `fotografia.html`, `contacto.html` no cambiaron). Puedes
+seguir editándolo con toda tranquilidad; simplemente no está enlazado desde
+la portada pública todavía. También se marcaron esas 5 páginas con
+`noindex, nofollow` para que Google no las indexe antes de tiempo.
+
+### Cómo salir del modo Coming Soon (lanzamiento real)
+
+1. Renombra `index.html` → `coming-soon.html` (por si quieres reusarlo después).
+2. Renombra `home.html` → `index.html`.
+3. En `partials/nav.html`, cambia `home.html` de vuelta a `index.html` (2 lugares)
+   y `data-page="home"` por `data-page="index"`.
+4. En `home.html` (ahora `index.html`) y en las otras 4 páginas, cambia
+   `<meta name="robots" content="noindex, nofollow">` de vuelta a
+   `content="index, follow"`.
+5. Restaura `sitemap.xml` con las 5 URLs (están comentadas al inicio del archivo).
+6. `git add -A && git commit -m "Lanzamiento" && git push`.
+
 ## Requisito: servir por HTTP
 
 El nav y el footer se cargan por `fetch()` desde `partials/`. Eso solo funciona
@@ -22,7 +47,8 @@ sirve por HTTP, así que en producción no hay que hacer nada especial.
 
 ```
 brant-portfolio/
-├── index.html          Inicio (hero + collage + intro + stats)
+├── index.html          Pantalla "Coming Soon" (URL pública actual)
+├── home.html            Inicio real (hero + collage + intro + stats) — pendiente de lanzar
 ├── sobre-mi.html        Bio, experiencia, herramientas, habilidades
 ├── proyectos.html        Showreel + galería (datos en data/projects.js) + proceso
 ├── fotografia.html       Tres miradas + detrás de escena
