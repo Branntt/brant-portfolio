@@ -621,7 +621,14 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 .contact-info .value{ font-size: 1.3rem; margin-top: 8px; }
 .contact-info a.value:hover{ color: var(--green-light); }
 .contact-photo{ width: 100%; height: auto; aspect-ratio: 21/9; object-fit: cover; }
-.contact-photo-wrap{ background: var(--green); }
+.contact-photo-wrap{
+  background: var(--green);
+  max-width: 1800px;
+  margin: 0 auto;
+}
+@media (max-width: 640px){
+  .contact-photo{ aspect-ratio: 4/3; }
+}
 
 /* ---------- Footer ---------- */
 .site-footer{
