@@ -1,0 +1,23 @@
+<!--
+  NAV PARTIAL — fuente única de la barra de navegación.
+  Se inyecta en cada página mediante <div data-include="nav"></div> + js/include.js.
+  Editar aquí actualiza el menú en las 5 páginas a la vez.
+  El enlace activo y aria-current se asignan automáticamente en js/main.js
+  comparando data-page con el archivo actual — no hace falta tocar esto al navegar.
+-->
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand-mark">
+      <img src="assets/img/icon-eye.png" alt="" class="brand-icon" width="30" height="18">
+      BRANT
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="index">Inicio</a></li>
+      <li><a href="sobre-mi.html" data-page="sobre-mi">Sobre mí</a></li>
+      <li><a href="proyectos.html" data-page="proyectos">Proyectos</a></li>
+      <li><a href="fotografia.html" data-page="fotografia">Fotografía</a></li>
+      <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
