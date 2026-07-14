@@ -36,9 +36,9 @@ const PROJECTS = [
     link: "#"
   },
   {
-    title: "Motilarte",
+    title: "Motilart",
     category: "Marca · Dirección",
-    client: "Motilarte",
+    client: "Motilart",
     year: "2025",
     description: "Contenido de marca para barbería, fotografía y video de producto.",
     image: "assets/img/motilarte-dron-poster.jpg",
