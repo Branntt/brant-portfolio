@@ -155,8 +155,33 @@ html.fonts-ready .soon-marquee-track{
   font-size: 0.98rem;
   line-height: 1.7;
   max-width: 46ch;
-  margin: 0 0 40px;
+  margin: 0 0 36px;
 }
+
+.soon-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  padding: 14px 32px;
+  font-family: var(--f-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  border: 1px solid var(--green-light);
+  border-radius: 2px;
+  transition: background .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.soon-btn:hover{
+  background: var(--green-light);
+  color: var(--ink-2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -12px rgba(77,127,110,0.6);
+}
+.soon-btn span{ transition: transform .3s ease; }
+.soon-btn:hover span{ transform: translateX(4px); }
 
 .soon-contact{
   display: flex;
