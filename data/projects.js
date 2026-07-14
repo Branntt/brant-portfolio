@@ -11,6 +11,8 @@
  *   description Descripción breve (1 frase)      (texto)
  *   image       Ruta de la imagen de portada     (assets/img/...)
  *   link        URL de Instagram/YouTube/Vimeo   ("#" mientras no exista)
+ *   video       (Opcional) Ruta a un .mp4 propio en assets/video/ — si existe,
+ *               la tarjeta reproduce el video directo en vez de enlazar afuera.
  */
 const PROJECTS = [
   {
@@ -18,8 +20,9 @@ const PROJECTS = [
     category: "Marca · Dirección",
     client: "Mercedes-Benz",
     year: "2026",
-    description: "Pieza de marca con dirección cinematográfica para contenido digital.",
-    image: "assets/img/reel-mustang.jpg",
+    description: "Revelación de vehículo con dirección de marca para contenido digital.",
+    image: "assets/img/mercedes-reveal-poster.jpg",
+    video: "assets/video/mercedes-reveal.mp4",
     link: "#"
   },
   {
