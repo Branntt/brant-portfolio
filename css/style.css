@@ -341,6 +341,43 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   .collage-icon.hourglass{ left: 3%; bottom: 3%; }
 }
 
+/* ---------- Bio headline (Hola! / Soy Brant) ---------- */
+.bio-star{
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.bio-hola{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: clamp(2.6rem, 7vw, 4.4rem);
+}
+.bio-hola .line-green{ color: var(--green); }
+
+/* ---------- Eye watermark divider ---------- */
+.eye-watermark{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+.eye-watermark img{
+  width: clamp(90px, 12vw, 150px);
+  height: auto;
+  opacity: 0.9;
+}
+.eye-watermark p{
+  font-family: var(--f-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* ---------- Intro / bio split ---------- */
 .split{
   display: grid;
@@ -565,27 +602,6 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 .reel-meta .value{ font-family: var(--f-serif); font-size: 1.6rem; margin-top: 4px; }
 
 /* ---------- Photography grid ---------- */
-.mirada-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 48px;
-}
-@media (max-width: 760px){ .mirada-grid{ grid-template-columns: 1fr; } }
-.mirada-grid .tall{ grid-row: span 2; }
-.mirada figure img{ width: 100%; height: auto; object-fit: cover; aspect-ratio: 3/4; }
-.mirada .cap{
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--line);
-}
-
 .bts-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -611,6 +627,21 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 }
 
 /* ---------- Contact ---------- */
+.contact-title-wrap{
+  text-align: center;
+  padding: clamp(40px, 8vw, 72px) 0 clamp(24px, 5vw, 40px);
+}
+.contact-title-eye{
+  width: clamp(56px, 8vw, 84px);
+  height: auto;
+  margin: 0 auto 6px;
+  display: block;
+}
+.contact-title{
+  font-style: italic;
+  color: var(--green);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+}
 .contact-hero{
   text-align: center;
 }
@@ -630,6 +661,17 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   background: var(--green);
   max-width: 1800px;
   margin: 0 auto;
+}
+.contact-photo-caption{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px clamp(20px, 4vw, 40px);
+  font-family: var(--f-sans);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.85;
 }
 @media (max-width: 640px){
   .contact-photo{ aspect-ratio: 4/3; }
