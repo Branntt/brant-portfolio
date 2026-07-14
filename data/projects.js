@@ -31,7 +31,8 @@ const PROJECTS = [
     client: "Paintball Continental",
     year: "2025",
     description: "Campaña publicitaria rodada en locación con equipo reducido.",
-    image: "assets/img/night-crew.jpg",
+    image: "assets/img/paintball-continental-poster.jpg",
+    video: "assets/video/paintball-continental.mp4",
     link: "#"
   },
   {
