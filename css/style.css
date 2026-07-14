@@ -629,7 +629,8 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 /* ---------- Contact ---------- */
 .contact-title-wrap{
   text-align: center;
-  padding: clamp(40px, 8vw, 72px) 0 clamp(24px, 5vw, 40px);
+  padding-top: clamp(40px, 8vw, 72px);
+  padding-bottom: clamp(24px, 5vw, 40px);
 }
 .contact-title-eye{
   width: clamp(56px, 8vw, 84px);
