@@ -51,7 +51,18 @@ const PROJECTS = [
     client: "Artista independiente",
     year: "2025",
     description: "Videoclip musical con dirección de arte y montaje narrativo.",
-    image: "assets/img/edit-desk.jpg",
+    image: "assets/img/ojitos-mentirosos-poster.jpg",
+    video: "assets/video/ojitos-mentirosos.mp4",
+    link: "#"
+  },
+  {
+    title: "Motovalle Ford",
+    category: "Marca · Dirección",
+    client: "Motovalle Ford",
+    year: "2025",
+    description: "Contenido ecuestre para concesionario, con dirección de marca.",
+    image: "assets/img/motovalle-ford-poster.jpg",
+    video: "assets/video/motovalle-ford.mp4",
     link: "#"
   },
   {

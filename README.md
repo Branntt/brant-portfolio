@@ -51,7 +51,7 @@ brant-portfolio/
 ├── home.html            Inicio real (hero + collage + intro + stats) — pendiente de lanzar
 ├── sobre-mi.html        Bio, experiencia, herramientas, habilidades
 ├── proyectos.html        Showreel + galería (datos en data/projects.js) + proceso
-├── fotografia.html       Tres miradas + detrás de escena
+├── fotografia.html       Divisiones + detrás de escena
 ├── contacto.html         Contacto
 ├── partials/
 │   ├── nav.html          Barra de navegación — se edita UNA vez, aplica a las 5 páginas
@@ -83,18 +83,25 @@ Abre `data/projects.js` y agrega un objeto al array `PROJECTS`:
   description: "Una frase corta describiendo el proyecto.",
   image: "assets/img/tu-imagen.jpg",
   link: "https://instagram.com/reel/..."   // o YouTube/Vimeo
+  // video: "assets/video/tu-video.mp4"    // opcional: ver más abajo
 }
 ```
 
 No hay que tocar HTML ni CSS: `proyectos.html` lo renderiza automáticamente
 (`js/render-projects.js`) con su animación de aparición y hover incluidas.
 
+Si agregas `video` con la ruta a un `.mp4` propio en `assets/video/`, la
+tarjeta reproduce ese video directo con controles nativos (usando `image`
+como poster) en vez de enlazar afuera con `link`; en ese caso `link` no se
+muestra y puede quedar en `"#"`.
+
 ## Cómo agregar fotos nuevas
 
-- **Fotografía (Tres miradas) / Detrás de escena**: son bloques `<figure>` fijos
-  en `fotografia.html`. Para cambiar una foto, reemplaza el `src` del `<img>`
-  correspondiente. Para agregar una categoría nueva, duplica un bloque
-  `<figure>` dentro de `.mirada-grid` o `.bts-grid`.
+- **Fotografía (Divisiones) / Detrás de escena**: son bloques `<figure>` fijos
+  en `fotografia.html`, ambos dentro de un `.bts-grid`. Para cambiar una foto,
+  reemplaza el `src` del `<img>` correspondiente. Para agregar una categoría
+  nueva, duplica un bloque `<figure>` dentro del `.bts-grid` que quieras
+  (usa la clase `big` en una de ellas para que ocupe 2×2 en el mosaico).
 - Sube las imágenes a `assets/img/`. Se recomienda:
   - Ancho máximo ~1400px para fotos de contenido, ~500px para íconos.
   - JPG calidad 80–85 para fotos, PNG para imágenes con transparencia.
@@ -148,6 +155,11 @@ Antes de publicar, reemplaza `https://tudominio.com` por el dominio real en:
 
 ## Videos pendientes
 
-En `data/projects.js` y en el bloque del reel de `proyectos.html`, los campos
-`link`/`href` están en `"#"` hasta que compartas los links reales de
-Instagram/YouTube/Vimeo de cada pieza.
+En `data/projects.js`, 5 de los 6 proyectos ya tienen video propio embebido
+(campo `video`) con su poster real. Solo falta:
+
+- **Rodaje nocturno**: tiene video real pero el `title`/`client`/`category`
+  siguen como marcador de posición (buscar el comentario `TÍTULO PROVISIONAL`
+  en `data/projects.js`) hasta confirmar de qué proyecto se trata.
+- El botón "Ver reel completo" del showreel en `proyectos.html` (`href="#"`)
+  sigue pendiente de un link real (Instagram/YouTube/Vimeo o video propio).

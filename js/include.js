@@ -20,7 +20,7 @@ window.partialsReady = (function () {
   return Promise.all(
     [...slots].map((el) => {
       const name = el.getAttribute('data-include');
-      return fetch(`partials/${name}.html`)
+      return fetch(`partials/${name}.html?v=2`)
         .then((res) => (res.ok ? res.text() : Promise.reject(res.status)))
         .then((html) => { el.outerHTML = html; })
         .catch(() => { el.innerHTML = ''; });
