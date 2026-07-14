@@ -661,16 +661,6 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 .reveal{ opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.in{ opacity: 1; transform: translateY(0); }
 
-/* ---------- Section index numbers ("01 / 06") ---------- */
-.section-index{
-  font-family: var(--f-sans);
-  font-size: 12px;
-  letter-spacing: .18em;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-.on-dark .section-index{ color: var(--muted-dark); }
-
 /* ---------- Accessibility: skip link & focus ---------- */
 .skip-link{
   position: absolute;
