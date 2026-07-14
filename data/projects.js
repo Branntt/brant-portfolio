@@ -40,7 +40,8 @@ const PROJECTS = [
     client: "Motilarte",
     year: "2025",
     description: "Contenido de marca para barbería, fotografía y video de producto.",
-    image: "assets/img/barbershop.jpg",
+    image: "assets/img/motilarte-dron-poster.jpg",
+    video: "assets/video/motilarte-dron.mp4",
     link: "#"
   },
   {
@@ -50,6 +51,19 @@ const PROJECTS = [
     year: "2025",
     description: "Videoclip musical con dirección de arte y montaje narrativo.",
     image: "assets/img/edit-desk.jpg",
+    link: "#"
+  },
+  {
+    // TÍTULO PROVISIONAL: Brant no me confirmó de qué proyecto es este video
+    // (rodaje nocturno con motos). Cambia title/client/category/description
+    // cuando tengas el dato real.
+    title: "Rodaje nocturno",
+    category: "Video · Dirección",
+    client: "Por confirmar",
+    year: "2026",
+    description: "Rodaje nocturno en locación — pendiente de confirmar el proyecto.",
+    image: "assets/img/rodaje-nocturno-poster.jpg",
+    video: "assets/video/rodaje-nocturno.mp4",
     link: "#"
   }
 ];
