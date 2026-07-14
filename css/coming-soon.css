@@ -1,26 +1,22 @@
 /* ============================================================
    Coming Soon — pantalla de espera antes del lanzamiento.
-   Usa las mismas variables/tipografías de css/style.css.
+   La portada (.hero/.collage) es la misma de home.html — ver
+   css/style.css. Este archivo solo estila el bloque de aviso +
+   botón + contacto + cinta que va debajo de esa portada.
    Para lanzar el sitio real: ver README.md → "Cómo salir del
    modo Coming Soon".
    ============================================================ */
 
 html, body.soon-body{
-  height: 100%;
   margin: 0;
-  background: var(--ink-2);
   overflow-x: hidden;
 }
 
-.soon{
+.soon-below{
   position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: var(--ink-2);
   overflow: hidden;
-  padding: 96px 24px 64px;
+  padding: 72px 24px 56px;
   text-align: center;
   isolation: isolate;
 }
@@ -55,6 +51,7 @@ html, body.soon-body{
   position: relative;
   z-index: 2;
   max-width: 640px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,57 +86,6 @@ html.no-js .soon-footer{
 }
 html.fonts-ready .soon-marquee-track{
   animation-play-state: running;
-}
-
-.soon-kicker{
-  font-family: var(--f-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin: 0 0 40px;
-}
-
-.soon-mark{
-  position: relative;
-  margin-bottom: 28px;
-}
-.soon-eye{
-  width: clamp(84px, 13vw, 140px);
-  height: auto;
-  filter: drop-shadow(0 0 26px rgba(77,127,110,0.55));
-  animation: soonBreathe 4.5s ease-in-out infinite;
-}
-.soon-drip{
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50% 50% 50% 0;
-  background: var(--green-light);
-  opacity: 0;
-  will-change: transform, opacity;
-  animation: soonDrip 3.2s ease-in infinite;
-}
-
-.soon-name{
-  font-family: var(--f-display);
-  color: var(--cream);
-  font-size: clamp(3.4rem, 12vw, 7rem);
-  line-height: 0.95;
-  letter-spacing: 0.01em;
-  margin: 0;
-}
-.soon-tag{
-  font-family: var(--f-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--green-light);
-  margin: 10px 0 40px;
 }
 
 .soon-line1{
@@ -215,7 +161,7 @@ html.fonts-ready .soon-marquee-track{
   border-top: 1px solid var(--line-dark);
   border-bottom: 1px solid var(--line-dark);
   padding: 16px 0;
-  margin-top: 56px;
+  margin-top: 40px;
 }
 .soon-marquee-track{
   display: flex;
@@ -250,31 +196,18 @@ html.fonts-ready .soon-marquee-track{
   0%, 100%{ opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
   50%{ opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
 }
-@keyframes soonBreathe{
-  0%, 100%{ transform: scale(1); }
-  50%{ transform: scale(1.05); }
-}
-@keyframes soonDrip{
-  0%{ opacity: 0; transform: translateX(-50%) translateY(0) rotate(45deg); }
-  15%{ opacity: 1; }
-  70%{ opacity: 0.6; transform: translateX(-50%) translateY(30px) rotate(45deg); }
-  71%{ opacity: 0; transform: translateX(-50%) translateY(0) rotate(45deg); }
-  100%{ opacity: 0; transform: translateX(-50%) translateY(0) rotate(45deg); }
-}
 @keyframes soonMarquee{
   from{ transform: translateX(0); }
   to{ transform: translateX(-50%); }
 }
 
 @media (max-width: 480px){
-  .soon{ padding: 72px 20px 48px; }
-  .soon-marquee-track span{ padding-right: 0; }
+  .soon-below{ padding: 56px 20px 40px; }
 }
 
 @media (prefers-reduced-motion: reduce){
-  .soon-noise, .soon-glow, .soon-eye, .soon-drip, .soon-marquee-track{
+  .soon-noise, .soon-glow, .soon-marquee-track{
     animation: none !important;
   }
-  .soon-drip{ display: none; }
   .soon-glow{ opacity: 0.7; }
 }

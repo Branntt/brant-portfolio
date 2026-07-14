@@ -11,35 +11,46 @@
 <meta property="og:site_name" content="Brant — Bacu Creative">
 <meta property="og:title" content="Brant · Bacu Creative — Muy pronto">
 <meta property="og:description" content="Algo bien chimba está en camino. Portafolio en construcción.">
-<meta property="og:image" content="https://tudominio.com/assets/img/icon-eye.png">
+<meta property="og:image" content="https://tudominio.com/assets/img/hero-portrait.png">
 <meta property="og:url" content="https://tudominio.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M10 50 C25 20,75 20,90 50 C75 80,25 80,10 50 Z%22 fill=%22none%22 stroke=%22%232c6754%22 stroke-width=%228%22/><circle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22none%22 stroke=%22%232c6754%22 stroke-width=%228%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/icon-eye.png">
+<link rel="preload" as="image" href="assets/img/hero-portrait.png">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/coming-soon.css">
 </head>
 <body class="soon-body">
 
-<div class="soon">
+<!-- PORTADA — mismo hero/collage que home.html (torn paper, textura, íconos, retrato) -->
+<section class="hero">
+  <div class="hero-top">
+    <span>Portafolio <span class="accent">·</span> Director creativo · Realizador audiovisual</span>
+    <span>2026</span>
+  </div>
+  <h1 class="hero-name">BRANT</h1>
+  <p class="hero-handle">@bacu_creative</p>
 
+  <div class="collage">
+    <img class="collage-icon eye" src="assets/img/icon-eye.png" alt="" width="500" height="301" loading="lazy">
+    <img class="collage-icon leaf" src="assets/img/icon-leaf.png" alt="" width="344" height="441" loading="lazy">
+    <div class="collage-inner">
+      <h2 class="collage-title">Portafolio<br>Creativo</h2>
+      <img class="collage-portrait" src="assets/img/hero-portrait.png" alt="Brant, director creativo y realizador audiovisual" width="1033" height="1549" fetchpriority="high">
+    </div>
+    <img class="collage-icon hourglass" src="assets/img/icon-hourglass.png" alt="" width="256" height="378" loading="lazy">
+    <img class="collage-icon camera" src="assets/img/icon-camera.png" alt="" width="408" height="273" loading="lazy">
+  </div>
+</section>
+
+<!-- COMING SOON — mensaje, botón al portafolio y contacto -->
+<section class="soon-below">
   <div class="soon-noise" aria-hidden="true"></div>
   <div class="soon-glow" aria-hidden="true"></div>
 
   <div class="soon-content">
-    <p class="soon-kicker">Bacu Creative · Portafolio</p>
-
-    <div class="soon-mark">
-      <img src="assets/img/icon-eye.png" alt="Logo Bacu Creative" class="soon-eye" width="500" height="301">
-      <span class="soon-drip" aria-hidden="true"></span>
-    </div>
-
-    <h1 class="soon-name">BRANT</h1>
-    <p class="soon-tag">Bacu Creative</p>
-
     <p class="soon-line1">Algo bien chimba está en camino.</p>
     <p class="soon-line2">Todavía estamos afinando cada detalle, pero ya puedes entrar a ver cómo va.</p>
 
@@ -60,7 +71,7 @@
   </div>
 
   <p class="soon-footer">© 2026 Bacu Creative — Brant</p>
-</div>
+</section>
 
 <script src="js/coming-soon.js"></script>
 </body>
