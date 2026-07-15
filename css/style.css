@@ -305,7 +305,10 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url('../assets/img/torn-paper-frame.png') center/100% 100% no-repeat;
+  background:
+    url('../assets/img/torn-paper-frame.png') center/100% 100% no-repeat,
+    linear-gradient(rgba(248,247,243,0.75), rgba(248,247,243,0.75)),
+    url('../assets/img/newspaper-texture.jpg') center/420px repeat;
 }
 .collage-inner{
   position: relative;
