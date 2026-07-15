@@ -390,7 +390,7 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   display: block;
   max-height: clamp(380px, 54vw, 660px);
   width: auto;
-  margin: -26% auto 0;
+  margin: -19% auto 0;
   filter: drop-shadow(0 26px 30px rgba(0,0,0,0.35));
 }
 .collage-icon{
