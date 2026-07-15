@@ -279,9 +279,10 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 }
 .hero-handle{
   text-align: center;
-  font-family: var(--f-serif);
-  font-style: italic;
-  font-size: 1.3rem;
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: clamp(1rem, 2.6vw, 1.5rem);
   color: var(--muted-dark);
   margin-bottom: 20px;
 }
