@@ -11,6 +11,7 @@
   --ink-2:        #221d1e;
   --green:        #2c6754;
   --green-light:  #4d7f6e;
+  --laser:        #6bf0b0;
   --line:         #d2d9d2;
   --line-dark:    #333a36;
   --muted:        #726e67;
@@ -312,12 +313,16 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   margin: 0 auto;
   text-align: center;
 }
+.title-orbit{ position: relative; }
 .collage-title{
+  position: relative;
+  z-index: 2;
   font-family: var(--f-display);
   color: #17140f;
   font-size: clamp(4rem, 19vw, 11rem);
   line-height: 0.86;
   letter-spacing: 0.005em;
+  animation: titleLevitate 4s ease-in-out infinite;
 }
 .collage-title .line{
   position: relative;
@@ -334,6 +339,47 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 }
 .collage-title .line-portafolio::before{ background-image: url('../assets/img/glow-portafolio.png'); }
 .collage-title .line-creativo::before{ background-image: url('../assets/img/glow-creativo.png'); }
+
+/* ---------- Eye orbit: 9 eyes levitating the title with laser beams ---------- */
+.eye-orbit{
+  position: absolute;
+  inset: -24% -6% -10%;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.eye-orbit .laser{
+  stroke: var(--laser);
+  stroke-width: 6;
+  stroke-linecap: round;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 5px rgba(107,240,176,0.9));
+  animation: laserPulse 2.4s ease-in-out infinite;
+}
+.eye-orbit .orbit-eye-img{
+  filter: drop-shadow(0 0 9px rgba(107,240,176,0.9));
+  animation: eyeFloat 3.6s ease-in-out infinite;
+}
+.eye-orbit .n2{ animation-delay: .2s; }
+.eye-orbit .n3{ animation-delay: .4s; }
+.eye-orbit .n4{ animation-delay: .6s; }
+.eye-orbit .n5{ animation-delay: .8s; }
+.eye-orbit .n6{ animation-delay: 1s; }
+.eye-orbit .n7{ animation-delay: 1.2s; }
+.eye-orbit .n8{ animation-delay: 1.4s; }
+.eye-orbit .n9{ animation-delay: 1.6s; }
+@keyframes titleLevitate{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+@keyframes eyeFloat{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-7px); }
+}
+@keyframes laserPulse{
+  0%, 100%{ opacity: 0.3; }
+  50%{ opacity: 0.85; }
+}
 .collage-portrait{
   position: relative;
   z-index: 3;
