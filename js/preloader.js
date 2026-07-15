@@ -16,6 +16,26 @@
     return;
   }
 
+  // Datos curiosos aleatorios: mitad trivia audiovisual, mitad sabor bumangués.
+  const FUN_FACTS = [
+    'Dato curioso: la claqueta se llama así por el sonido que hace al cerrarse — ayuda a sincronizar audio y video en edición.',
+    'La "hora dorada", justo después del amanecer o antes del atardecer, es la favorita de todo director de fotografía.',
+    'La regla de los 180° existe para que el espectador nunca pierda la orientación dentro de una escena.',
+    '24 cuadros por segundo se volvió el estándar del cine para ahorrar película, no por una razón científica.',
+    'El primer largometraje colombiano fue "María", estrenado en 1922.',
+    'Un buen corte de edición se siente, no se ve.',
+    'Camine, que esto ya casi está listo...',
+    'Sin hablar paja: esto sí está cargando de verdad.',
+    'Poniéndole toda la berraquera a los detalles...',
+    'Nada de joche — aquí todo va rápido.',
+    'Cero paila: la experiencia ya casi carga.',
+    'Ajustando cada detalle bien bacano, mano.'
+  ];
+  const line2 = pre.querySelector('.pre-line-2');
+  if (line2) {
+    line2.textContent = FUN_FACTS[Math.floor(Math.random() * FUN_FACTS.length)];
+  }
+
   document.documentElement.classList.add('is-preloading');
 
   const MIN_MS = reduced ? 300 : 2600;
