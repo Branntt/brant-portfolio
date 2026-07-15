@@ -390,7 +390,7 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   display: block;
   max-height: clamp(380px, 54vw, 660px);
   width: auto;
-  margin: -19% auto 0;
+  margin: -22% auto 0;
   filter: drop-shadow(0 26px 30px rgba(0,0,0,0.35));
 }
 .collage-icon{
@@ -403,10 +403,14 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
 .collage-icon.hourglass{ width: clamp(46px, 7vw, 90px); bottom: 10%; left: 5%; }
 .collage-icon.camera{ width: clamp(70px, 10vw, 140px); bottom: 6%; right: 5%; }
 .collage-icon.eye{ width: clamp(48px, 7vw, 84px); top: 8%; left: 4%; }
+.collage-icon.bridge{ width: clamp(100px, 15vw, 190px); top: 40%; left: 0.5%; opacity: 0.8; }
+.collage-icon.headphones{ width: clamp(56px, 8vw, 100px); top: 42%; right: 1.5%; opacity: 0.85; }
 @media (max-width: 620px){
   .collage-icon.leaf{ top: 3%; right: 3%; }
   .collage-icon.camera{ right: 3%; bottom: 3%; }
   .collage-icon.hourglass{ left: 3%; bottom: 3%; }
+  .collage-icon.bridge{ display: none; }
+  .collage-icon.headphones{ display: none; }
 }
 
 /* ---------- Bio headline (Hola! / Soy Brant) ---------- */
