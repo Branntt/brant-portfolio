@@ -303,35 +303,44 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background:
-    linear-gradient(rgba(248,247,243,0.87), rgba(248,247,243,0.9)),
-    url('../assets/img/newspaper-texture.jpg');
-  background-size: 420px, 700px;
-  background-repeat: repeat, repeat;
-  filter: saturate(0.3) contrast(0.95);
+  background: url('../assets/img/torn-paper-frame.png') center/100% 100% no-repeat;
 }
 .collage-inner{
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 .collage-title{
   font-family: var(--f-display);
   color: #17140f;
-  font-size: clamp(3.2rem, 12vw, 7.5rem);
+  font-size: clamp(4rem, 19vw, 11rem);
   line-height: 0.86;
   letter-spacing: 0.005em;
-  text-shadow: 0 0 34px rgba(44,103,84,0.35);
 }
+.collage-title .line{
+  position: relative;
+  display: block;
+}
+.collage-title .line::before{
+  content: "";
+  position: absolute;
+  inset: -35% -8%;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.collage-title .line-portafolio::before{ background-image: url('../assets/img/glow-portafolio.png'); }
+.collage-title .line-creativo::before{ background-image: url('../assets/img/glow-creativo.png'); }
 .collage-portrait{
   position: relative;
   z-index: 3;
   display: block;
   max-height: clamp(320px, 46vw, 560px);
   width: auto;
-  margin: -4% auto 0;
+  margin: -16% auto 0;
   filter: drop-shadow(0 26px 30px rgba(0,0,0,0.35));
 }
 .collage-icon{
