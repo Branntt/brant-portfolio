@@ -388,9 +388,9 @@ section.pad{ padding: clamp(64px, 10vw, 140px) 0; }
   position: relative;
   z-index: 3;
   display: block;
-  max-height: clamp(320px, 46vw, 560px);
+  max-height: clamp(380px, 54vw, 660px);
   width: auto;
-  margin: -16% auto 0;
+  margin: -26% auto 0;
   filter: drop-shadow(0 26px 30px rgba(0,0,0,0.35));
 }
 .collage-icon{
