@@ -66,14 +66,11 @@ const PROJECTS = [
     link: "#"
   },
   {
-    // TÍTULO PROVISIONAL: Brant no me confirmó de qué proyecto es este video
-    // (rodaje nocturno con motos). Cambia title/client/category/description
-    // cuando tengas el dato real.
-    title: "Rodaje nocturno",
-    category: "Video · Dirección",
-    client: "Por confirmar",
+    title: "Las Calles Son Nuestras",
+    category: "Videoclip · Dirección",
+    client: "Stun",
     year: "2026",
-    description: "Rodaje nocturno en locación — pendiente de confirmar el proyecto.",
+    description: "Videoclip musical rodado de noche en locación urbana, con motos.",
     image: "assets/img/rodaje-nocturno-poster.jpg",
     video: "assets/video/rodaje-nocturno.mp4",
     link: "#"
