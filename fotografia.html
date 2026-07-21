@@ -43,7 +43,7 @@
       <p class="kicker">Fotografía</p>
       <h1 class="h-serif section-title">Divisiones</h1>
 
-      <div class="bts-grid" data-stagger>
+      <div class="bts-grid" data-stagger data-lightbox>
         <figure class="big">
           <img src="assets/img/reel-mustang.jpg" alt="Retrato" width="720" height="1280" loading="lazy">
           <figcaption>Retrato</figcaption>
@@ -60,38 +60,15 @@
     </div>
   </section>
 
-  <!-- SESIONES REALES -->
+  <!-- SESIONES REALES (renderizadas desde data/sessions.js) -->
   <section class="on-cream-2 pad">
     <div class="container reveal">
       <p class="kicker">Trabajo reciente</p>
       <h2 class="h-serif section-title">Sesiones</h2>
+      <p class="lede" style="margin-top:14px; max-width:56ch">Entra a cada sesión para ver la galería completa y detallar cada foto.</p>
 
-      <div class="bts-grid" data-stagger>
-        <figure class="big">
-          <img src="assets/img/sesion-xv-retrato.jpg" alt="Retrato de quinceañera con iluminación dramática" width="1400" height="2100" loading="lazy">
-          <figcaption>Sesión XV</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/sesion-brayanher-caballo-baul.jpg" alt="Caballo asomado al baúl de un Mustang, sesión de marca personal" width="1400" height="2100" loading="lazy">
-          <figcaption>Marca personal</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/sesion-brayanher-mustang-frontal.jpg" alt="Ford Mustang GT en locación campestre" width="1400" height="2100" loading="lazy">
-          <figcaption>Marca personal</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/sesion-xv-ramo.jpg" alt="Quinceañera con ramo de flores" width="1400" height="2100" loading="lazy">
-          <figcaption>Sesión XV</figcaption>
-        </figure>
-        <figure class="big">
-          <img src="assets/img/sesion-brayanher-caballo-retrato.jpg" alt="Retrato de caballo blanco en la puerta del establo" width="1400" height="2100" loading="lazy">
-          <figcaption>Marca personal</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/sesion-xv-serenata.jpg" alt="Serenata de mariachi a la quinceañera" width="1400" height="2100" loading="lazy">
-          <figcaption>Serenata</figcaption>
-        </figure>
-      </div>
+      <!-- Este grid se llena automáticamente desde data/sessions.js — agrega una sesión ahí y aparece aquí. -->
+      <div class="session-grid" id="session-grid" aria-live="polite"></div>
     </div>
   </section>
 
@@ -101,7 +78,7 @@
       <p class="kicker">Entre bastidores</p>
       <h2 class="h-serif section-title" style="color:var(--cream)">El set desde adentro</h2>
 
-      <div class="bts-grid" data-stagger>
+      <div class="bts-grid" data-stagger data-lightbox>
         <figure class="big">
           <img src="assets/img/bts-rodaje-caballo.jpg" alt="Rodaje en locación con Mustang GT y caballo" width="1400" height="2100" loading="lazy">
           <figcaption>Rodaje</figcaption>
@@ -134,8 +111,19 @@
 
 <div data-include="footer"></div>
 
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+  <button class="lightbox-prev" aria-label="Foto anterior">&#8249;</button>
+  <img class="lightbox-img" src="" alt="">
+  <button class="lightbox-next" aria-label="Foto siguiente">&#8250;</button>
+  <p class="lightbox-caption"></p>
+</div>
+
 <script src="js/preloader.js?v=3"></script>
 <script src="js/include.js?v=3"></script>
+<script src="data/sessions.js?v=1"></script>
+<script src="js/render-sessions.js?v=1"></script>
+<script src="js/lightbox.js?v=1"></script>
 <script src="js/main.js?v=2"></script>
 </body>
 </html>

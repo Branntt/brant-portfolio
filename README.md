@@ -11,10 +11,10 @@ y una animación — no tiene navegación ni enlaza al resto del portafolio.
 
 El portafolio completo real sigue existiendo y funcionando igual que antes,
 solo que renombrado a **`home.html`** (y las demás páginas `sobre-mi.html`,
-`proyectos.html`, `fotografia.html`, `contacto.html` no cambiaron). Puedes
-seguir editándolo con toda tranquilidad; simplemente no está enlazado desde
-la portada pública todavía. También se marcaron esas 5 páginas con
-`noindex, nofollow` para que Google no las indexe antes de tiempo.
+`proyectos.html`, `fotografia.html`, `sesion.html`, `contacto.html` no
+cambiaron). Puedes seguir editándolo con toda tranquilidad; simplemente no
+está enlazado desde la portada pública todavía. También se marcaron esas
+páginas con `noindex, nofollow` para que Google no las indexe antes de tiempo.
 
 ### Cómo salir del modo Coming Soon (lanzamiento real)
 
@@ -51,18 +51,22 @@ brant-portfolio/
 ├── home.html            Inicio real (hero + collage + intro + stats) — pendiente de lanzar
 ├── sobre-mi.html        Bio, experiencia, herramientas, habilidades
 ├── proyectos.html        Showreel + galería (datos en data/projects.js) + proceso
-├── fotografia.html       Divisiones + detrás de escena
+├── fotografia.html       Divisiones + sesiones (portadas, datos en data/sessions.js) + detrás de escena
+├── sesion.html            Galería completa de UNA sesión (?id=...) + lightbox
 ├── contacto.html         Contacto
 ├── partials/
-│   ├── nav.html          Barra de navegación — se edita UNA vez, aplica a las 5 páginas
+│   ├── nav.html          Barra de navegación — se edita UNA vez, aplica a las páginas
 │   └── footer.html        Pie de página — igual, fuente única
 ├── data/
-│   └── projects.js        Array de proyectos de la galería (ver más abajo)
+│   ├── projects.js        Array de proyectos de la galería (ver más abajo)
+│   └── sessions.js        Array de sesiones fotográficas (ver más abajo)
 ├── js/
 │   ├── include.js         Inyecta los partials (nav/footer) en cada página
 │   ├── preloader.js       Lógica de la pantalla de carga inicial
 │   ├── main.js             Nav móvil, enlace activo, scroll-reveal, reduced-motion
-│   └── render-projects.js  Convierte data/projects.js en las tarjetas de proyectos.html
+│   ├── render-projects.js  Convierte data/projects.js en las tarjetas de proyectos.html
+│   ├── render-sessions.js  Convierte data/sessions.js en tarjetas (fotografia.html) o en la galería de una sesión (sesion.html)
+│   └── lightbox.js         Visor de foto ampliada con anterior/siguiente — funciona en cualquier grid con [data-lightbox]
 ├── css/
 │   └── style.css          Sistema de diseño completo (variables, tipografía, componentes)
 ├── assets/img/            Fotografías e íconos (ya optimizados/redimensionados)
@@ -95,6 +99,31 @@ tarjeta reproduce ese video directo con controles nativos (usando `image`
 como poster) en vez de enlazar afuera con `link`; en ese caso `link` no se
 muestra y puede quedar en `"#"`.
 
+## Cómo agregar una sesión fotográfica nueva
+
+Abre `data/sessions.js` y agrega un objeto al array `SESSIONS`:
+
+```js
+{
+  id: "identificador-unico",       // sin espacios, se usa en la URL sesion.html?id=...
+  title: "Nombre de la sesión",
+  category: "Marca Personal",       // o "Sesión XV", etc.
+  cover: "assets/img/tu-portada.jpg",
+  photos: [
+    { src: "assets/img/foto-1.jpg", alt: "Descripción de la foto 1" },
+    { src: "assets/img/foto-2.jpg", alt: "Descripción de la foto 2" }
+  ]
+}
+```
+
+No hay que tocar HTML ni CSS: `fotografia.html` muestra automáticamente una
+tarjeta de portada para la sesión nueva (`js/render-sessions.js`), y esa
+tarjeta enlaza a `sesion.html?id=identificador-unico`, que arma la galería
+completa con esas fotos. Cualquier foto de cualquier grid (Divisiones, BTS,
+sesiones) se puede hacer clic para verla ampliada con el lightbox — no
+requiere configuración adicional, solo que el grid tenga el atributo
+`data-lightbox`.
+
 ## Cómo agregar fotos nuevas
 
 - **Fotografía (Divisiones) / Detrás de escena**: son bloques `<figure>` fijos
@@ -102,6 +131,8 @@ muestra y puede quedar en `"#"`.
   reemplaza el `src` del `<img>` correspondiente. Para agregar una categoría
   nueva, duplica un bloque `<figure>` dentro del `.bts-grid` que quieras
   (usa la clase `big` en una de ellas para que ocupe 2×2 en el mosaico).
+- **Sesiones fotográficas**: no son bloques fijos — se agregan en
+  `data/sessions.js` (ver arriba).
 - Sube las imágenes a `assets/img/`. Se recomienda:
   - Ancho máximo ~1400px para fotos de contenido, ~500px para íconos.
   - JPG calidad 80–85 para fotos, PNG para imágenes con transparencia.
@@ -112,7 +143,7 @@ muestra y puede quedar en `"#"`.
 
 1. Copia cualquier página existente como plantilla (por ejemplo `fotografia.html`).
 2. Cambia el `<title>`, las meta `description`/Open Graph y el contenido de `<main>`.
-3. Agrega el enlace en `partials/nav.html` (una sola vez, aparece en las 5 páginas):
+3. Agrega el enlace en `partials/nav.html` (una sola vez, aparece en todas las páginas):
    ```html
    <li><a href="nueva-pagina.html" data-page="nueva-pagina">Nueva página</a></li>
    ```

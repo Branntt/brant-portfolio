@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sesión — Brant · Bacu Creative</title>
+<meta name="description" content="Galería completa de una sesión fotográfica de Brant, director creativo y realizador audiovisual.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://tudominio.com/sesion.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brant — Portafolio">
+<meta property="og:title" content="Sesión — Brant">
+<meta property="og:description" content="Galería completa de una sesión fotográfica de Brant.">
+<meta property="og:image" content="https://tudominio.com/assets/img/sesion-xv-retrato.jpg">
+<meta property="og:url" content="https://tudominio.com/sesion.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M10 50 C25 20,75 20,90 50 C75 80,25 80,10 50 Z%22 fill=%22none%22 stroke=%22%232c6754%22 stroke-width=%228%22/><circle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22none%22 stroke=%22%232c6754%22 stroke-width=%228%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=21">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<div id="preloader" aria-hidden="true">
+  <img class="pre-logo" src="assets/img/icon-eye.png?v=2" alt="">
+  <div class="pre-lines">
+    <p class="pre-line-1">Estamos construyendo algo bien chimba.</p>
+    <p class="pre-line-2">Gracias por esperar. Estamos preparando una experiencia hecha con detalle.</p>
+  </div>
+  <div class="pre-bar-track"><div class="pre-bar-fill"></div></div>
+</div>
+
+<div data-include="nav"></div>
+
+<main id="main">
+
+  <!-- SESIÓN (renderizada desde data/sessions.js según ?id=) -->
+  <section class="on-cream pad">
+    <div class="container reveal">
+      <a class="session-back" href="fotografia.html">&larr; Volver a fotografía</a>
+      <p class="kicker" id="session-kicker">Sesión</p>
+      <h1 class="h-serif section-title" id="session-title">—</h1>
+      <p class="lede" style="margin-top:14px" id="session-count"></p>
+
+      <!-- Este grid se llena automáticamente desde data/sessions.js según ?id= en la URL. -->
+      <div class="bts-grid" data-stagger data-lightbox id="session-gallery" aria-live="polite"></div>
+    </div>
+  </section>
+
+</main>
+
+<div data-include="footer"></div>
+
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+  <button class="lightbox-prev" aria-label="Foto anterior">&#8249;</button>
+  <img class="lightbox-img" src="" alt="">
+  <button class="lightbox-next" aria-label="Foto siguiente">&#8250;</button>
+  <p class="lightbox-caption"></p>
+</div>
+
+<script src="js/preloader.js?v=3"></script>
+<script src="js/include.js?v=3"></script>
+<script src="data/sessions.js?v=1"></script>
+<script src="js/render-sessions.js?v=1"></script>
+<script src="js/lightbox.js?v=1"></script>
+<script src="js/main.js?v=2"></script>
+</body>
+</html>
